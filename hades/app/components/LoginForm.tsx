@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import { useRouter } from 'next/router'; // Use Next.js's useRouter for navigation
-import { login } from '../apiService'; // Ensure this API service interacts with your backend
+//login
+import React, { useState } from 'react';
+import { login } from '../apiService';
 
 const LoginForm: React.FC = () => {
   // State variables for email, password, and error message
@@ -8,14 +8,6 @@ const LoginForm: React.FC = () => {
   const [password, setPassword] = useState<string>('');
   const [error, setError] = useState<string>('');
   const [loading, setLoading] = useState<boolean>(false);
-  const [isClient, setIsClient] = useState<boolean>(false);
-
-  const router = useRouter(); // Next.js router for navigation
-
-  // Ensure the component is client-side rendered
-  useEffect(() => {
-    setIsClient(true);
-  }, []);
 
   // Event handler for form submission
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -28,9 +20,7 @@ const LoginForm: React.FC = () => {
       localStorage.setItem('access_token', data.access_token);
       console.log('Login successful!');
       setLoading(false);
-      if (isClient) {
-        router.push('/dashboard'); // Redirect to the dashboard after successful login
-      }
+      window.location.href = '/dashboard'; // Redirect to the dashboard after successful login
     } catch (err: any) {
       setLoading(false);
       setError(err.message || 'An error occurred during login.');
@@ -76,4 +66,3 @@ const LoginForm: React.FC = () => {
 };
 
 export default LoginForm;
-

@@ -6,7 +6,7 @@ export const Hero = () => {
     <section
       className="relative min-h-screen w-full flex items-center justify-center bg-center overflow-hidden"
       style={{
-        backgroundImage: `url('/assets/Athena stab.png')`,
+        backgroundImage: `url('/assets/Athena_character.png')`,
         backgroundBlendMode: 'overlay',
         backgroundSize: 'contain',
         backgroundRepeat: 'no-repeat',
@@ -25,7 +25,7 @@ export const Hero = () => {
               Pathway to easier grading!
             </h1>
             <p className="text-xl tracking-tight mt-4">
-              It is the new age of sucking the fuck out of Athena's titties and her rewarding you with plausible feedback to help you along your grading journey.
+              It is the new age of receiving Athena's feedback to help you along your grading journey.
             </p>
             <div className="flex gap-4 mt-10 justify-center">
               <button className="bg-purple-800 text-white py-2 px-4 rounded-lg hover:bg-purple-700 transition duration-300">

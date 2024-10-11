@@ -1,29 +1,38 @@
-// SignupForm.tsx
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import { signup } from '../apiService';
 
 export const SignupForm: React.FC = () => {
   const [name, setName] = useState<string>('');
   const [email, setEmail] = useState<string>('');
   const [password, setPassword] = useState<string>('');
-  const [role, setRole] = useState<string>('user'); // Default role to "user"
+  const [role, setRole] = useState<string>(''); 
   const [error, setError] = useState<string>('');
   const [loading, setLoading] = useState<boolean>(false);
-
-  const navigate = useNavigate();
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
     setError('');
 
+    // Client-side validation
+  if (!email.includes('@')) {
+    setError('Please enter a valid email address.');
+    setLoading(false);
+    return;
+  }
+
+  if (password.length < 6) {
+    setError('Password must be at least 6 characters long.');
+    setLoading(false);
+    return;
+  }
+
     try {
       const data = await signup(name, email, password, role);
       localStorage.setItem('access_token', data.access_token);
       console.log('Signup successful!');
       setLoading(false);
-      navigate('/dashboard'); // Redirect to dashboard after successful signup
+      window.location.href = '/dashboard'; // Redirect to dashboard after successful signup
     } catch (err: any) {
       setLoading(false);
       setError(err.message || 'An error occurred during sign up.');
@@ -74,8 +83,8 @@ export const SignupForm: React.FC = () => {
             required
             className="w-full border border-gray-300 rounded-lg px-4 py-2 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600"
           >
-            <option value="user">Student</option>
-            <option value="admin">Teacher</option>
+            <option value="student">Student</option>
+            <option value="teacher">Teacher</option>
           </select>
         </div>
         <button
@@ -92,4 +101,3 @@ export const SignupForm: React.FC = () => {
 };
 
 export default SignupForm;
-
