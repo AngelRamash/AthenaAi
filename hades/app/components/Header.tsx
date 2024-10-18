@@ -80,7 +80,7 @@ export const Header: React.FC = () => {
           <div className="container mx-auto">
             <div className="flex items-center justify-between">
               <nav className="hidden sm:flex gap-6 font-medium text-black items-center ml-auto">
-                <Link href="/about">
+                <Link href="/pages/about">
                   <span className="hover:text-blue-800 transition duration-200">
                     About
                   </span>

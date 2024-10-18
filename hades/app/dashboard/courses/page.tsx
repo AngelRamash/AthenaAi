@@ -1,7 +1,7 @@
 "use client";
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
-import Layout from '../Layout';
+import Layout from '../StudentDashboard/Layout';
 
 interface Course {
   id: number;

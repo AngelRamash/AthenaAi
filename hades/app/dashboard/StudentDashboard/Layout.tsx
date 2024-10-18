@@ -1,7 +1,7 @@
 import { ReactNode } from 'react';
-import TopNavbar from './TopNavbar';
-import Sidebar from './Sidebar';
-import styles from './Layout.module.css';
+import TopNavbar from './StudentTopNavbar';
+import Sidebar from './Studentsidebar';
+import styles from '../Layout.module.css';
 
 interface LayoutProps {
     children: ReactNode;
@@ -11,7 +11,7 @@ interface LayoutProps {
   return (
     <div className={styles.layout}>
       <div className={styles.topNav}>
-        <TopNavbar />
+      <TopNavbar name= "Guest" profileImage="/images/user-profile.jpg" />
       </div>
       <div className={styles.contentWrapper}>
         <div className={styles.sidebar}>

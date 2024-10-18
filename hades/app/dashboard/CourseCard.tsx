@@ -39,12 +39,7 @@ const CourseCard: React.FC<CourseCardProps> = ({
         </div>
         <p className="text-sm text-gray-600 mt-1">Time Spent: {timeSpent}</p>
         <div className="mt-4 flex justify-between">
-          <Link
-            to={`/courses/${id}`}
-            className="bg-blue-500 text-white px-3 py-1 rounded-lg hover:bg-blue-600 transition"
-          >
-            Manage
-          </Link>
+          
           <button
             onClick={onEdit}
             className="bg-yellow-500 text-white px-3 py-1 rounded-lg hover:bg-yellow-600 transition"

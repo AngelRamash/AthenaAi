@@ -1,6 +1,6 @@
 "use client"
 import React, { useState, useEffect } from 'react';
-import Layout from '../Layout';
+import Layout from './Layout';
 import ScheduledTasks from '../ScheduledTasks';
 import CalendarWidget from '../CalendarWidget';
 import CourseCard from '../CourseCard';
