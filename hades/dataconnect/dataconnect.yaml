@@ -1,0 +1,12 @@
+specVersion: "v1beta"
+serviceId: "hades"
+location: "us-central1"
+schema:
+  source: "./schema"
+  datasource:
+    postgresql:
+      database: "postgres"
+      cloudSql:
+        instanceId: "athena-cloudsql"
+      # schemaValidation: "COMPATIBLE"
+connectorDirs: ["./connector"]
