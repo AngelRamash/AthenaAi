@@ -2,7 +2,7 @@
 
 **Co-Founder & Lead Developer**  
 *AI Screen-Assist Chatbot Startup*  
-📅 September 2024 – Present
+September 2024 – Present
 
 ## Overview
 Athena AI is a full-stack, AI-powered screen-assist chatbot designed to analyze on-screen content in real time. By combining **Computer Vision** and **Natural Language Processing (NLP)**, the system helps users understand, interact with, and receive intelligent assistance based on what’s currently displayed on their screen.
